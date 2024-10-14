@@ -1,4 +1,4 @@
-SketchGAN is a deep learning-based project that focuses on generating realistic images from sketches using a Generative Adversarial Network (GAN) model. This project is designed to aid in criminal identification by generating possible criminal likenesses based on witness or police sketches. It leverages GANs, specifically Conditional GANs (cGANs), to generate high-quality images conditioned on input sketches.
+SketchGAN is a deep learning project focused on generating realistic images from sketches using a Generative Adversarial Network (GAN) model. The project aims to assist in criminal identification by creating potential criminal likenesses based on witness or police sketches. It employs Conditional GANs (cGANs) to produce high-quality images that are conditioned on the input sketches. This project was completed in collaboration with Pratheesh (lnu.prat@northeastern.edu).
 
 The project includes modules for training, testing, hyperparameter tuning, and evaluating the performance of different models. In addition, the project allows for the comparison of models based on various evaluation metrics such as the Fréchet Inception Distance (FID) and Inception Score (IS).
 
@@ -30,3 +30,34 @@ model_evaluation_results.json: Stores results from model evaluations, including 
 
 Data/: Contains the dataset of sketches and real images.
 
+Model Download Instructions
+Due to the large size of the trained model files, they are hosted externally on Google Drive. Below you will find the links to download each of the model files. Each model corresponds to a specific set of hyperparameters tested during our experiments.
+
+Available Models
+Here is a list of the available models along with their corresponding hyperparameters and Google Drive download links:
+
+Model with lr=0.005, batch_size=8, l1_weight=100, dropout_rate=0.1
+
+Description: This model achieved the highest performance in our tests, showing excellent balance between similarity and noise reduction.
+Google Drive Link: https://drive.google.com/drive/folders/1INPnHaby9jZZUpLsL0K1skMNQ0YX5jbE?usp=drive_link
+Model with lr=0.001, batch_size=8, l1_weight=10, dropout_rate=0.5
+
+Description: Strong in both SSIM and PSNR metrics, excellent for maintaining high image quality.
+Google Drive Link: https://drive.google.com/drive/folders/1-0lGv7r1zxtROls2EO8GgpKuT0ckxbaa?usp=drive_link
+Model with lr=0.005, batch_size=8, l1_weight=10, dropout_rate=0.5
+
+Description: High SSIM score and decent PSNR, indicating good image similarity with reasonable noise reduction.
+Google Drive Link: https://drive.google.com/drive/folders/1-0lGv7r1zxtROls2EO8GgpKuT0ckxbaa?usp=drive_link
+How to Use the Models
+After downloading the models, please follow these steps to use them in your projects:
+
+Download the Model: Click on the link provided above and download the model file to your local machine.
+Place the Model in Your Project Directory: Move the downloaded .pth file into the designated model directory in your project structure.
+Update Model Path in Code: Ensure your code references the correct path where the model file is stored.
+Load and Use the Model: Use the standard PyTorch method to load the model weights and evaluate or further fine-tune the model on your data.
+Troubleshooting
+If you encounter any issues while downloading or using the models, please check the following:
+
+Ensure you have sufficient permissions to access the Google Drive links.
+Verify that the downloaded files are complete and not corrupted.
+Check that your environment meets all the dependencies required to run the model.
